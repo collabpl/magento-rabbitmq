@@ -1,4 +1,4 @@
-name: Build & Push - collabpl/magento-rabbitmq:3.14
+name: Build & Push - collabpl/magento-rabbitmq:3.13
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ on:
     types: [published]
 
 jobs:
-  php-8-3:
+  rabbitmq-3-13:
     runs-on: ubuntu-latest
     steps:
       -
@@ -32,8 +32,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v6
         with:
-          context: 3.14
+          context: 3.13
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            collabpl/magento-rabbitmq:3.14
+            collabpl/magento-rabbitmq:3.13
